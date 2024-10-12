@@ -1,0 +1,11 @@
+.bushes {
+  position: absolute;
+  top: -5em;
+  left: 5rem;
+  width: 20rem;
+  z-index: 100;
+
+  &:active {
+    transform: skew(-5deg, -10deg);
+  }
+}

@@ -1,0 +1,10 @@
+.tree {
+  position: absolute;
+  top: -25em;
+  left: calc(100vw - 35rem);
+  width: 35rem;
+
+  &:active {
+    transform: skew(5deg, 10deg);
+  }
+}

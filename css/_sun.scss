@@ -1,0 +1,40 @@
+@use "variables" as vars;
+@use "mixins";
+
+.sun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: vars.$color-sun;
+  z-index: 2;
+  transition: transform 0.5s ease-in-out;
+  @include mixins.animate(move-sun);
+
+  &__face {
+    max-width: 70%;
+  }
+
+  &:hover {
+    transform: rotate(75deg);
+  }
+}
+
+@keyframes move-sun {
+  0% {
+    top: 15em;
+    left: calc(0vw - 300px);
+  }
+  50% {
+    top: 1em;
+    left: calc(50% - (75px + 0.5em));
+    clip-path: none;
+  }
+  100% {
+    top: 15em;
+    left: calc(100vw + 150px);
+  }
+}

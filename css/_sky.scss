@@ -1,0 +1,17 @@
+@use "variables" as vars;
+@use "mixins";
+
+.sky {
+  height: vars.$sky-height;
+  @include mixins.animate(sunset);
+}
+
+@keyframes sunset {
+  from,
+  to {
+    background-color: vars.$color-sunrise-sunset;
+  }
+  50% {
+    background-color: vars.$color-daylight;
+  }
+}

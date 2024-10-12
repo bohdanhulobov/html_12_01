@@ -1,0 +1,43 @@
+@use "variables" as vars;
+@use "mixins";
+
+.t-rex {
+  position: absolute;
+  top: -10em;
+  left: calc(50vw - 17.5rem);
+  width: 35rem;
+  z-index: 10;
+  @include mixins.animate(move-t-rex);
+
+  &__arrh {
+    display: none;
+    position: absolute;
+    top: -3rem;
+    left: calc(0px - 50px);
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: vars.$color-bg;
+    padding: 0.5rem;
+    z-index: 1;
+  }
+
+  &:hover {
+    .t-rex__arrh {
+      display: flex;
+    }
+  }
+
+  &:active {
+    transform: translate(2.5rem);
+    transform: scale(1.25);
+  }
+}
+
+@keyframes move-t-rex {
+  from {
+    left: calc(100vw + 35rem);
+  }
+  to {
+    left: calc(0vw - 35rem);
+  }
+}

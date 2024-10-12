@@ -1,0 +1,66 @@
+@use "mixins";
+
+.clouds {
+  position: absolute;
+  width: 10rem;
+  z-index: 10;
+  @include mixins.animate(move-clouds);
+
+  &:nth-child(1) {
+    top: 1em;
+    left: 5%;
+  }
+
+  &:nth-child(2) {
+    top: 5em;
+    left: calc(100vw - 25rem);
+  }
+
+  &:nth-child(3) {
+    top: 10em;
+    left: calc(100vw - 15rem);
+  }
+
+  &:nth-child(4) {
+    top: 15em;
+    left: calc(100vw - 30rem);
+    width: 15rem;
+  }
+
+  &:nth-child(5) {
+    top: 20em;
+    left: calc(100vw - 20rem);
+    width: 20rem;
+  }
+
+  &:nth-child(6) {
+    top: 15em;
+    left: 10vw;
+  }
+
+  &:nth-child(7) {
+    top: 15em;
+    left: 15vw;
+    width: 15rem;
+  }
+
+  &:nth-child(8) {
+    top: 5em;
+    left: 10vw;
+  }
+
+  &:nth-child(9) {
+    top: 3em;
+    left: 45vw;
+  }
+}
+
+@keyframes move-clouds {
+  from,
+  to {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1rem);
+  }
+}
